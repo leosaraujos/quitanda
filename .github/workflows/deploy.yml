@@ -16,7 +16,7 @@ jobs:
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
-          port: 2222
+          port: 22
           sftp_only: true
           local_path: './*'
           remote_path: '/public_html/quitanda/'
