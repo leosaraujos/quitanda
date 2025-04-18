@@ -1,24 +1,23 @@
-name: Deploy Quitanda via FTP
+name: Deploy Quitanda via SFTP
 
 on:
   push:
     branches: [main]
 
 jobs:
-  ftp-deploy:
+  sftp-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v3
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: "ftps"
           port: 2222
-          local-dir: ./
-          server-dir: /public_html/quitanda/
-
+          local_path: './*'
+          remote_path: '/home/wwwleo/domains/leoaraujo.com/public_html/quitanda/'
+          sftp_only: true
