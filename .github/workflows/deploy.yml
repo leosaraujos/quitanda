@@ -17,5 +17,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./  # ou ./dist se mudar depois
+          protocol: "sftp"
+          port: 2222
+          local-dir: ./
           server-dir: /public_html/quitanda
