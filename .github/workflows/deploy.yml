@@ -20,4 +20,5 @@ jobs:
           protocol: "ftps"
           port: 2222
           local-dir: ./
-          server-dir: /public_html/quitanda
+          server-dir: /public_html/quitanda/
+
